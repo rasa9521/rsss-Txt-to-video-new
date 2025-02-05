@@ -39,8 +39,8 @@ bot = Client(
     bot_token=BOT_TOKEN
 )
 
-API_ID    = os.environ.get("API_ID", "21705536")
-API_HASH  = os.environ.get("API_HASH", "c5bb241f6e3ecf33fe68a444e288de2d")
+API_ID    = os.environ.get("API_ID", "")
+API_HASH  = os.environ.get("API_HASH", "")
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "") 
 
 # Define aiohttp routes
@@ -68,11 +68,11 @@ import random
 keyboard = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("FOLLOW " ,url="https://www.instagram.com/nikhil.saini.khe"),
-            InlineKeyboardButton("✜ NIKHIL SAINI ✜" ,url="https://t.me/Nikhil_saini_khe"),
+            InlineKeyboardButton("FOLLOW " ,url="https://www.instagram.com/rajrmahar"),
+            InlineKeyboardButton("✜ Rajesh R Mahar ✜" ,url="https://t.me/rajrmahar"),
         ],
         [
-            InlineKeyboardButton("✜ 𝐉𝐨𝐢𝐧 𝐔𝐩𝐃𝐚𝐭𝐞 Group 🥱✜" ,url=f"https://t.me/+taZCy5OkoMUwNzI9"),
+            InlineKeyboardButton("✜ 𝐉𝐨𝐢𝐧 𝐔𝐩𝐃𝐚𝐭𝐞 Group 🥱✜" ,url=f"https://t.me/+ovw8WwlIcWZmYTdl"),
         ],
     ]
 )
@@ -81,11 +81,11 @@ keyboard = InlineKeyboardMarkup(
 Busy = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("FOLLOW " ,url="https://www.instagram.com/nikhil.saini.khe"),
-            InlineKeyboardButton("✜ NIKHIL SAINI ✜" ,url="https://t.me/Nikhil_saini_khe"),
+            InlineKeyboardButton("FOLLOW " ,url="https://www.instagram.com/rajrmahar"),
+            InlineKeyboardButton("✜ Rajesh R Mahar ✜" ,url="https://t.me/rajrmahar"),
         ],
         [
-            InlineKeyboardButton("✜ 𝐉𝐨𝐢𝐧 𝐔𝐩𝐃𝐚𝐭𝐞 Group 🥱✜" ,url=f"https://t.me/+taZCy5OkoMUwNzI9"),
+            InlineKeyboardButton("✜ 𝐉𝐨𝐢𝐧 𝐔𝐩𝐃𝐚𝐭𝐞 Group 🥱✜" ,url=f"https://t.me/+ovw8WwlIcWZmYTdl"),
         ],
     ]
 )
@@ -111,11 +111,11 @@ async def start_command(bot: Client, message: Message):
     # Caption for the image
     caption = (
         "**𝐇𝐞𝐥𝐥𝐨 𝐃𝐞𝐚𝐫 👋!**\n\n"
-        "➠ **𝐈 𝐚𝐦 𝐚 𝐓𝐞𝐱𝐭 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫 𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 By NIKHIL SAINI**\n"
+        "➠ **𝐈 𝐚𝐦 𝐚 𝐓𝐞𝐱𝐭 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫 𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 By Rajesh R Mahar**\n"
         "➠ **Can Extract Videos & PDFs From Your Text File and Upload to Telegram!**\n"
-        "➠ **For Guide Use Command /guide 📖**\n\n"
-        "➠ **Use /saini Command to Download From TXT File** 📄\n\n"
-        "➠ **𝐌𝐚𝐝𝐞 𝐁𝐲:** @nikhil_saini_khe"
+        "➠ **For Guide Use Command /help 📖**\n\n"
+        "➠ **Use /upload Command to Download From TXT File** 📄\n\n"
+        "➠ **𝐌𝐚𝐝𝐞 𝐁𝐲:** @rajrmahar"
     )
 
     # Send the image with caption and buttons
@@ -176,7 +176,7 @@ SUBSCRIPTION_FILE = "subscription_data.txt"
 CHANNELS_FILE = "channels_data.json"
 
 # Admin ID
-YOUR_ADMIN_ID = 1147534909
+YOUR_ADMIN_ID = 618670084
 
 # Function to read subscription data
 def read_subscription_data():
@@ -217,16 +217,16 @@ def admin_only(func):
     return wrapper
 
 # How to use:-
-@bot.on_message(filters.command("guide"))
+@bot.on_message(filters.command("help"))
 async def guide_handler(client: Client, message: Message):
     guide_text = (
         "🔑 **How to get started with Premium**:\n\n"
         "1. **First of all**, contact the owner and buy a premium plan. 💰\n"
         "2. **If you are a premium user**, you can check your plan by using `/myplan`. 🔍\n\n"
         "📖 **Usage**:\n\n"
-        "1. `/add_channel -100{channel_id}` - Add a channel to the bot.\n"
-        "2. `/remove_channel -100{channel_id}` - Remove a channel from the bot.\n"
-        "3. `/moni .txt` file command - Process the .txt file.\n"
+        "1. `/add_channel {channel_id}` - Add a channel to the bot.\n"
+        "2. `/remove_channel {channel_id}` - Remove a channel from the bot.\n"
+        "3. `/upload .txt` file command - Process the .txt file.\n"
         "4. `/stop` - Stop the task running in the bot. 🚫\n\n"
         "If you have any questions, feel free to ask! 💬"
     )
@@ -243,7 +243,7 @@ async def add_user(client, message: Message):
         write_subscription_data(subscription_data)
         await message.reply_text(f"User {user_id} added with expiration date {expiration_date}.")
     except ValueError:
-        await message.reply_text("Invalid command format. Use: /adduser <user_id> <expiration_date>")
+        await message.reply_text("Invalid command format. Use: /adduser user_id expiration_date")
 
 
 # 2. /removeuser
@@ -257,9 +257,9 @@ async def remove_user(client, message: Message):
         write_subscription_data(subscription_data)
         await message.reply_text(f"User {user_id} removed.")
     except ValueError:
-        await message.reply_text("Invalid command format. Use: /removeuser <user_id>")
+        await message.reply_text("Invalid command format. Use: /removeuser user_id")
 
-YOUR_ADMIN_ID = 1147534909
+YOUR_ADMIN_ID = 618670084
 
 # Helper function to check admin privilege
 def is_admin(user_id):
@@ -349,7 +349,7 @@ async def remove_channel(client, message: Message):
     except ValueError:
         await message.reply_text("Invalid command format. Use: /remove_channels <channel_id>")
 
-YOUR_ADMIN_ID = 1147534909
+YOUR_ADMIN_ID = 618670084
 
 # Helper function to check admin privilege
 def is_admin(user_id):
@@ -400,10 +400,10 @@ async def stop_handler(client, message: Message):
             await message.reply_text("🚫 You are not a premium user. Subscribe to unlock all features! ✨")
             return
 
-    await message.reply_text("♦️ 𝐒𝐭𝐨𝐩𝐩𝐞𝐝 Baby💞 ♦️" , True)
+    await message.reply_text("♦️ Batch Stopped 💞 ♦️" , True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
-@bot.on_message(filters.command("saini"))
+@bot.on_message(filters.command("upload"))
 async def moni_handler(client: Client, m: Message):
     if m.chat.type == "private":
         user_id = str(m.from_user.id)
@@ -515,7 +515,7 @@ async def moni_handler(client: Client, m: Message):
     else:
         CR = credit
    
-    await editable.edit("🌄 Now send the Thumb url if don't want thumbnail send no ")
+    await editable.edit("🌄 Now send the Thumb url if don't want thumbnail send No ")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
     await input6.delete(True)
@@ -526,7 +526,7 @@ async def moni_handler(client: Client, m: Message):
         getstatusoutput(f"wget '{thumb}' -O 'thumb.jpg'")
         thumb = "thumb.jpg"
     else:
-        thumb == "no"
+        thumb == "No"
 
     if len(links) == 1:
         count = 1
@@ -617,8 +617,8 @@ async def moni_handler(client: Client, m: Message):
                      
             try:  
                 
-                cc = f'**🎥 VIDEO ID: {str(count).zfill(3)}.\n\n📄 Title: {name1} {res} ⎳𝓸𝓿𝓮❥❤️━━╬٨ﮩ🅝🅘🅚🅗🅘🅛٨ـﮩـ❥.mkv\n\n<pre><code>🔖 Batch Name: {b_name}</code></pre>\n\n📥 Extracted By : {CR}**'
-                cc1 = f'**📁 FILE ID: {str(count).zfill(3)}.\n\n📄 Title: {name1} 𝄟𝕾𝖆𝖎𝖓𝖎𝄟.pdf \n\n<pre><code>🔖 Batch Name: {b_name}</code></pre>\n\n📥 Extracted By : {CR}**'
+                cc = f'**VIDEO ID: {str(count).zfill(3)}.\n\n📄 Title: {name1} {res}.mkv\n\n<pre><code>🔖 Batch Name: {b_name}</code></pre>\n\n📥 Extracted By : {CR}**'
+                cc1 = f'**FILE ID: {str(count).zfill(3)}.\n\n📄 Title: {name1}.pdf \n\n<pre><code>🔖 Batch Name: {b_name}</code></pre>\n\n📥 Extracted By : {CR}**'
                                  
                 
                 if "drive" in url:
@@ -674,7 +674,7 @@ async def moni_handler(client: Client, m: Message):
                           
                 else:
                     Show = f"❊⟱ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 ⟱❊ »\n\n📄 Title:- `{name}\n\n⌨ 𝐐𝐮𝐥𝐢𝐭𝐲 » {raw_text2}`\n\n**🔗 𝐔𝐑𝐋 »** `{url}`"
-                    prog = await m.reply_text(f"**Downloading:-**\n\n**📄 Title:-** `{name}\n\nQuality - {raw_text2}`\n\n**Link:**`{url}`\n\n**Bot Made By NIKHIL SAINI **")
+                    prog = await m.reply_text(f"**Downloading:-**\n\n**📄 Title:-** `{name}\n\nQuality - {raw_text2}`\n\n**Link:**`{url}`\n\n**Bot Made By @rajrmahar **")
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
@@ -690,6 +690,6 @@ async def moni_handler(client: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("🔰Done Hero💞")
+    await m.reply_text("🔰Done Boss 💞")
 
 bot.run()
