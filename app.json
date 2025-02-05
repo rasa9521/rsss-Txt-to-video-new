@@ -7,8 +7,8 @@
         "video-extract",
         "pyrogram"
     ],
-    "repository": "https://github.com/nikhilsainiop/New-txt",
-    "success_url": "https://t.me/+taZCy5OkoMUwNzI9",
+    "repository": "https://github.com/rajrmahar/txt-to-video-new",
+    "success_url": "https://t.me/+ovw8WwlIcWZmYTdl",
     "stack": "heroku-22",
     "env": {
         "API_ID": {
