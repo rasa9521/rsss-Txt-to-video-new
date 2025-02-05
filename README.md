@@ -36,9 +36,19 @@
 
 ## Botfather Commands
 ```
-start - 🦋 Bot Alive Cheking
-stop - 🛑 Upload stop
-upload - 🎬 Txt file upload
+start - 🚀 Start the bot.
+upload - 🫠 Extract in Batch.
+Help - ❓Guide if you're new.
+adduser - ➕ Add user to premium.
+removeuser - ➖ Remove user from premium.
+users - 🗄 Get all user IDs.
+myplan - 🗓 Check our premium plans.
+add_channel - 📟 Add Channel.
+remove_channel - 📟 Remove Channel.
+allowed_channels - 🔦 Allowed Channels.
+remove_all_channels - 😐 Remove All Allowed Channels.
+stop - 🚫 Stop batch process.
+cookies - Allows any user to upload a cookies file dynamically.
 ```
 -----
 Credits: [https://t.me/+taZCy5OkoMUwNzI9]
