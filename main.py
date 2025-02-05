@@ -509,7 +509,7 @@ async def moni_handler(client: Client, m: Message):
     # Default credit message
     credit = "️ ⁪⁬⁮⁮⁮"
     if raw_text3 == '1':
-        CR = '@nikhil_saini_khe'
+        CR = '@rajrmahar 💐🕊️'
     elif raw_text3:
         CR = raw_text3
     else:
