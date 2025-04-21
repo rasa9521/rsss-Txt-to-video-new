@@ -68,7 +68,7 @@ import random
 keyboard = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("FOLLOW " ,url="https://www.instagram.com/rajrmahar"),
+            InlineKeyboardButton("FOLL " ,url="https://www.instagram.com/rajrmahar"),
             InlineKeyboardButton("✜ Rajesh R Mahar ✜" ,url="https://t.me/rajrmahar"),
         ],
         [
