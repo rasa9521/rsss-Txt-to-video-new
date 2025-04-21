@@ -176,7 +176,7 @@ SUBSCRIPTION_FILE = "subscription_data.txt"
 CHANNELS_FILE = "channels_data.json"
 
 # Admin ID
-YOUR_ADMIN_ID = 7804396225
+YOUR_ADMIN_ID = 8148018146
 
 # Function to read subscription data
 def read_subscription_data():
@@ -259,7 +259,7 @@ async def remove_user(client, message: Message):
     except ValueError:
         await message.reply_text("Invalid command format. Use: /removeuser user_id")
 
-YOUR_ADMIN_ID = 7804396225
+YOUR_ADMIN_ID = 8148018146
 
 # Helper function to check admin privilege
 def is_admin(user_id):
@@ -349,7 +349,7 @@ async def remove_channel(client, message: Message):
     except ValueError:
         await message.reply_text("Invalid command format. Use: /remove_channels <channel_id>")
 
-YOUR_ADMIN_ID = 7804396225
+YOUR_ADMIN_ID = 8148018146
 
 # Helper function to check admin privilege
 def is_admin(user_id):
